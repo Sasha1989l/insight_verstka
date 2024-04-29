@@ -63,7 +63,7 @@
             background-image: url(images/Group\ 63.svg);
             background-repeat: no-repeat;
             background-size: 101%;
-            animation: changing 20s infinite running;
+            /*animation: changing 20s infinite running;*/
         }
         .elements{
             margin-left: 0px;
@@ -140,7 +140,6 @@
         }
 
 
-
         .plate{
             display: none;
             z-index: 999;
@@ -167,45 +166,41 @@
         input::placeholder{
             padding-left: 2.7vw;
         }
-        .input1{
-
-            position: absolute;
+        .error{
             z-index: 999;
-            margin-top: 12.4vh;
+            width: 75vw;
+            margin: 0.5vh auto;
+            padding-left: 10vw;
+            font-family: "Montserrat";
+            color: rgb(230, 39, 39);
+            font-weight: 500;
+            font-size: 1.5vh;
+            display: block;
+        }
+
+        .form-input{
+            z-index: 999;
             color: #67645E;
             font-family: "Montserrat";
             font-size: 3vh;
             font-weight: 300;
             width: 75vw;
             left: 50%;
-            transform: translate(-50%, -50%);
             border: 0.20vh solid #67645E;
             border-radius: 50vh;
             text-align: center;
             cursor: pointer;
             transition: all 0.3s;
+            margin: 0 auto;
+        }
+
+        .input1{
+            margin-top: 10.4vh;
         }
 
         :focus {outline:none;}
-        
 
-        .input2{
-            position: absolute;
-            z-index: 999;
-            margin-top: 19.4vh;
-            color: #67645E;
-            font-family: "Montserrat";
-            font-size: 3vh;
-            font-weight: 300;
-            width: 75vw;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            border: 0.20vh solid #67645E;
-            border-radius: 50vh;
-            text-align: center;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
+
         .input3{
             position: absolute;
             z-index: 999;
@@ -262,52 +257,46 @@
             transition: all 0.3s;
         }
 
-        .login{
-            position: absolute;
+        .form-button {
+            display: block;
             z-index: 999;
-            margin-top: 26.4vh;
             color: #67645E;
             background-color: #ffffff00;
             font-family: "Montserrat";
             font-size: 3vh;
             font-weight: 300;
             width: 75vw;
-            left: 50%;
-            transform: translate(-50%, -50%);
             border: 0.20vh solid #67645E;
             border-radius: 50vh;
             text-align: center;
             cursor: pointer;
             transition: all 0.3s;
+            margin: 0 auto;
         }
+
+        .login{
+            margin-top: 3vh;
+        }
+
         .recovery{
+            margin-top: 2vh;
             text-decoration: none;
-            position: absolute;
-            z-index: 999;
-            margin-top: 31.4vh;
-            color: #67645E;
-            font-family: "Montserrat";
             font-size: 2vh;
             font-weight: 350;
-            left: 50%;
-            transform: translate(-50%, -50%); 
-            background-color: #ffffff00;
             border: none;
-            cursor: pointer;
         }
         .alternative{
-            position: absolute;
             z-index: 999;
+            width: 60vw;
+            margin: 3vh auto;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            margin-top: 36.4vh;
             color: #67645E;
             font-family: "Montserrat";
-            font-size: 2,5vh;
+            font-size: 2vh;
             font-weight: 300;
-            left: 50%;
-            transform: translate(-50%, -50%);
+
         }
         .line {
             width: 25vw;
@@ -315,22 +304,7 @@
             background-color: #67645E;
         }
         .VK{
-            position: absolute;
-            z-index: 999;
-            margin-top: 44vh;
-            color: #67645E;
-            font-family: "Montserrat";
-            background-color: #ffffff00;
-            font-size: 3vh;
-            font-weight: 300;
-            width: 75vw;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            border: 0.20vh solid #67645E;
-            border-radius: 50vh;
-            text-align: center;
-            cursor: pointer;
-            transition: all 0.3s;
+            margin-top: 4vh;
         }
     </style>
     
@@ -386,18 +360,22 @@
 
     <div class="plate" id="plateIn">
         <!-- Поля ввода -->
-        <div class="input1">
+        <div class="form-input input1">
             <input type="text" id="name" name="name" placeholder="Логин"/>
         </div>
-        <div class="input2">
+        <div class="error">
+            Неверный логин или пароль
+        </div>
+
+        <div class="form-input input2">
             <input type="password" id="name" name="name"  placeholder="Пароль" />
         </div>
 
         <!-- Кнопка входа по данным из полей -->
-        <button class="login" id="btnIN" onclick="location.href='main.html'">Войти</button>
+        <button class="form-button login" id="btnIN" onclick="location.href='main.html'">Войти</button>
 
         <!-- кнопка перехода на страницу восстановления пароля -->
-        <button class="recovery" id="btnREC" onclick="location.href='#'" style="text-decoration: none;">Забыли пароль?</button>
+        <button class="form-button recovery" id="btnREC" onclick="location.href='#'" style="text-decoration: none;">Забыли пароль?</button>
         
         <!-- тут полосочки красивые не трогать)))))) -->
         <div class="alternative">
@@ -407,7 +385,7 @@
         </div>
 
         <!-- Авторизация через ВК -->
-        <button class="VK" id="btnVK" onclick="location.href='main.html'">Войти через VK</button>
+        <button class="form-button VK" id="btnVK" onclick="location.href='main.html'">Войти через VK</button>
     </div> 
     
 
