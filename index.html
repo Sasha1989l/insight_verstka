@@ -275,6 +275,14 @@
 
 <!-- тут форма регистрации -->
     <div class="plate" id="plateReg">
+        <div style="position: absolute; width: 100%" id="closePlateReg">
+            <div style="width: 80px;
+                        height: 10px;
+                        background: #000;
+                        border-radius: 20px;
+                        margin: 10px auto;
+        "></div>
+        </div>
         <!-- Поля ввода -->
         <div class="form-input input1">
             <input type="text" id="name" name="name" placeholder="Имя"/>
@@ -308,6 +316,14 @@
 
 
     <div class="plate" id="plateIn">
+        <div style="position: absolute; width: 100%" id="closePlateIn">
+            <div style="width: 80px;
+                        height: 10px;
+                        background: #000;
+                        border-radius: 20px;
+                        margin: 10px auto;
+        "></div>
+        </div>
         <!-- Поля ввода -->
         <div class="form-input input1">
             <input type="text" id="name" name="name" placeholder="Логин"/>
@@ -336,7 +352,7 @@
         <!-- Авторизация через ВК -->
         <button class="form-button VK" id="btnVK" onclick="location.href='main.html'">Войти через VK</button>
     </div> 
-    
+
 
 
 
@@ -363,6 +379,20 @@
         deviz.style.display = "none";
         btnIn.style.display = 'none';
         plateIn.style.display = 'block';
+    });
+
+    closePlateReg.addEventListener('click', () => {
+      btnReg.style.display = 'block';
+      deviz.style.display = "block";
+      btnIn.style.display = 'block';
+      plateReg.style.display = 'none';
+    });
+
+    closePlateIn.addEventListener('click', () => {
+      btnReg.style.display = 'block';
+      deviz.style.display = "block";
+      btnIn.style.display = 'block';
+      plateIn.style.display = 'none';
     });
 
 </script>
