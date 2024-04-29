@@ -48,7 +48,6 @@
               to {
                 transform: translateY(0vh);
               }
-            
         }
         
         body{
@@ -63,7 +62,7 @@
             background-image: url(images/Group\ 63.svg);
             background-repeat: no-repeat;
             background-size: 101%;
-            /*animation: changing 20s infinite running;*/
+            animation: changing 20s infinite running;
         }
         .elements{
             margin-left: 0px;
@@ -140,6 +139,7 @@
         }
 
 
+
         .plate{
             display: none;
             z-index: 999;
@@ -175,7 +175,7 @@
             color: rgb(230, 39, 39);
             font-weight: 500;
             font-size: 1.5vh;
-            display: block;
+            /*visibility: hidden;*/
         }
 
         .form-input{
@@ -200,63 +200,6 @@
 
         :focus {outline:none;}
 
-
-        .input3{
-            position: absolute;
-            z-index: 999;
-            margin-top: 26.4vh;
-            color: #67645E;
-            font-family: "Montserrat";
-            font-size: 3vh;
-            font-weight: 300;
-            width: 75vw;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            border: 0.20vh solid #67645E;
-            border-radius: 50vh;
-            text-align: center;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-        
-        .next{
-            position: absolute;
-            z-index: 999;
-            margin-top: 36.4vh;
-            color: #67645E;
-            background-color: #ffffff00;
-            font-family: "Montserrat";
-            font-size: 3vh;
-            font-weight: 300;
-            width: 75vw;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            border: 0.20vh solid #67645E;
-            border-radius: 50vh;
-            text-align: center;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-
-        .vkreg{
-            position: absolute;
-            z-index: 999;
-            margin-top: 44vh;
-            color: #67645E;
-            font-family: "Montserrat";
-            background-color: #ffffff00;
-            font-size: 3vh;
-            font-weight: 300;
-            width: 75vw;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            border: 0.20vh solid #67645E;
-            border-radius: 50vh;
-            text-align: center;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-
         .form-button {
             display: block;
             z-index: 999;
@@ -271,11 +214,11 @@
             text-align: center;
             cursor: pointer;
             transition: all 0.3s;
-            margin: 0 auto;
+            margin: 3vh auto;
         }
 
         .login{
-            margin-top: 3vh;
+            margin-bottom: 2vh;
         }
 
         .recovery{
@@ -287,7 +230,7 @@
         }
         .alternative{
             z-index: 999;
-            width: 60vw;
+            width: 65vw;
             margin: 3vh auto;
             display: flex;
             align-items: center;
@@ -302,9 +245,6 @@
             width: 25vw;
             height: 0.05vh;
             background-color: #67645E;
-        }
-        .VK{
-            margin-top: 4vh;
         }
     </style>
     
@@ -336,23 +276,32 @@
 <!-- тут форма регистрации -->
     <div class="plate" id="plateReg">
         <!-- Поля ввода -->
-        <div class="input1">
+        <div class="form-input input1">
             <input type="text" id="name" name="name" placeholder="Имя"/>
         </div>
-
-        <div class="input2">
-            <input type="password" id="name" name="name"  placeholder="Почта" />
+        <div class="error">
+            Введите имя.
         </div>
 
-        <div class="input3">
+        <div class="form-input">
+            <input type="password" id="name" name="name"  placeholder="Почта" />
+        </div>
+        <div class="error">
+            Укажите корректную почту.
+        </div>
+
+        <div class="form-input">
             <input type="password" id="name" name="name"  placeholder="Пароль" />
+        </div>
+        <div class="error">
+            Пароль должен состоять из 8 символов.
         </div>
         
 
         <!-- Авторизация через ВК -->
-        <button class="next" id="btnREG" onclick="location.href='main.html'">Продолжить</button>
+        <button class="form-button next" id="btnREG" onclick="location.href='main.html'">Продолжить</button>
 
-        <button class="vkreg" id="vkREG" onclick="location.href='main.html'">Войти через VK</button>
+        <button class="form-button vkreg" id="vkREG" onclick="location.href='main.html'">Войти через VK</button>
     </div>
 
 <!-- тут форма входа -->
@@ -367,7 +316,7 @@
             Неверный логин или пароль
         </div>
 
-        <div class="form-input input2">
+        <div class="form-input">
             <input type="password" id="name" name="name"  placeholder="Пароль" />
         </div>
 
